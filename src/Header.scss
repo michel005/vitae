@@ -1,0 +1,88 @@
+.mainHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 14px;
+	padding: 0;
+	width: 100%;
+
+	.profilePicture {
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+
+		img {
+			border-radius: 10%;
+			box-shadow: #aaa 0 0 7px;
+			max-width: 128px;
+		}
+
+		.socialMedias {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			gap: 7px;
+
+			& > a > * {
+				height: 18px;
+				width: 18px;
+				transition: all 0.5s;
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+
+			.linkedin {
+				color: #0a66c2;
+				transition: all 0.5s;
+			}
+
+			.facebook {
+				.letter {
+					fill: #fff;
+				}
+			}
+		}
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		flex-grow: 1;
+
+		.infoGroup {
+			display: flex;
+			flex-direction: row;
+			font-size: 0.7em;
+			gap: 4px;
+
+			* {
+				font-size: 1em;
+			}
+
+			label {
+				color: #999;
+				font-weight: bold;
+			}
+
+			span {
+				font-weight: normal !important;
+			}
+		}
+
+		h1 {
+			color: #333;
+			font-size: 2.7em;
+		}
+
+		h3 {
+			color: #aaa;
+		}
+
+		a {
+			font-size: 0.7em;
+		}
+	}
+}

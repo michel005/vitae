@@ -1,0 +1,72 @@
+$HEIGHT: 10px;
+
+.progressIndicator {
+	display: flex;
+	flex-direction: column;
+	transition: all 0.25s;
+	min-width: 100px;
+
+	* {
+		transition: all 0.25s;
+	}
+
+	&.negative {
+		.progresso {
+			background-color: #f009;
+		}
+	}
+
+	&.maximun {
+		.progresso {
+			background-color: #00da00;
+		}
+
+		.value {
+			color: #fff;
+		}
+	}
+
+	&.noData {
+		.progresso {
+			background-color: #ccc;
+		}
+
+		.value {
+			color: #fff;
+		}
+	}
+
+	.label {
+		color: #aaa;
+		font-size: 12px;
+		font-weight: bold;
+		margin-bottom: 4px;
+	}
+
+	.progresso {
+		background-color: #39f;
+		border-radius: 7px;
+		height: $HEIGHT;
+		margin-top: -$HEIGHT;
+	}
+
+	.value {
+		border-radius: 7px;
+		display: flex;
+		flex-direction: row;
+		font-weight: bold;
+		height: $HEIGHT;
+		justify-content: center;
+		margin-top: -$HEIGHT;
+		padding-top: 5px;
+	}
+
+	.background {
+		background: #fff;
+		border-radius: 7px;
+		box-shadow: #ddd 0 0 4px;
+		height: $HEIGHT;
+		justify-content: center;
+		width: 100%;
+	}
+}
