@@ -13,19 +13,18 @@
 
 		img {
 			border-radius: 10%;
-			box-shadow: #aaa 0 0 7px;
-			max-width: 128px;
+			height: 180px;
+			width: 180px;
 		}
 
 		.socialMedias {
 			display: flex;
 			flex-direction: row;
-			justify-content: center;
-			gap: 7px;
+			gap: 10px;
 
 			& > a > * {
-				height: 18px;
-				width: 18px;
+				height: 24px;
+				width: 24px;
 				transition: all 0.5s;
 
 				&:hover {
@@ -55,7 +54,7 @@
 		.infoGroup {
 			display: flex;
 			flex-direction: row;
-			font-size: 0.7em;
+			font-size: 14px;
 			gap: 4px;
 
 			* {
@@ -63,7 +62,6 @@
 			}
 
 			label {
-				color: #999;
 				font-weight: bold;
 			}
 

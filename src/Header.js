@@ -1,8 +1,7 @@
-import ProfilePicture from './assets/profile.jpg'
 import MyInfo from './assets/MyInfo'
 import Logos from './assets/Logos'
 import DateUtils from './utils/DateUtils'
-import { useMediaQuery } from 'react-responsive'
+import {useMediaQuery} from 'react-responsive'
 import './Header.scss'
 
 const Header = () => {
@@ -11,7 +10,7 @@ const Header = () => {
 	return (
 		<div className={'mainHeader'}>
 			<div className={'profilePicture'}>
-				<img src={ProfilePicture} alt={MyInfo.name} />
+				<img src="https://lh3.googleusercontent.com/a/ACg8ocLpqXqbHUIx0fLsW1Qr_ZZTj_SoIzmRx3lvA2bmlAFZBw82=s288-c-no" alt={MyInfo.name} />
 				<div className={'socialMedias'}>
 					<a rel="noreferrer" href={MyInfo.linkedin} target={'_blank'}>
 						<Logos.LinkedIn />

@@ -1,7 +1,3 @@
-import MOOSample from './moo_sample.png'
-import GrigoSample from './grigo_sample.png'
-import GerFinWEBSample from './gerfinweb_sample.png'
-
 const MyInfo = {
 	name: 'Michel Douglas Grigoli',
 	nameReduced: 'Michel D. Grigoli',
@@ -123,29 +119,6 @@ const MyInfo = {
 		{
 			title: 'Introdução ao FIGMA',
 			progress: 1,
-		},
-	],
-	projects: [
-		{
-			title: 'Meu Orçamento Online',
-			description: 'Site para gestão de orçamentos de forma facilitada',
-			tecnology: 'Java 11 + React + AWS',
-			image: MOOSample,
-			url: 'https://meuorcamentoonline.com.br',
-		},
-		{
-			title: 'Grigo Training',
-			description: 'Protótipo de site para gestão de treinos e dieta',
-			tecnology: 'React + AWS',
-			image: GrigoSample,
-			url: 'https://grigotraining.com.br',
-		},
-		{
-			title: 'GerFinWEB',
-			description: 'Gerenciador financeiro pessoal',
-			tecnology: 'React + Java + Mongo DB',
-			image: GerFinWEBSample,
-			url: 'https://grigotraining.com.br',
 		},
 	],
 	experiences: [
