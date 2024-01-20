@@ -3,32 +3,31 @@ import MyInfo from './assets/MyInfo'
 import DateUtils from './utils/DateUtils'
 import { FacebookLogo, GithubLogo, InstagramLogo, LinkedInLogo } from './assets/Logos'
 import Icon from './components/Icon'
-import Companies from './pages/Companies'
 
 const App = () => {
 	return (
 		<div className={style.app}>
 			<div className={style.page}>
 				<div className={style.sidebar}>
-					<img
-						src="https://lh3.googleusercontent.com/a/ACg8ocLpqXqbHUIx0fLsW1Qr_ZZTj_SoIzmRx3lvA2bmlAFZBw82=s288-c-no"
-						alt={MyInfo.name}
-					/>
-					<div className={style.logos}>
-						<a href={MyInfo.linkedin} target="_blank" rel="noreferrer">
-							<LinkedInLogo />
-						</a>
-						<a href={MyInfo.instagram} target="_blank" rel="noreferrer">
-							<InstagramLogo />
-						</a>
-						<a href={MyInfo.facebook} target="_blank" rel="noreferrer">
-							<FacebookLogo />
-						</a>
-						<a href={MyInfo.github} target="_blank" rel="noreferrer">
-							<GithubLogo />
-						</a>
-						<div style={{ flexGrow: 1 }} />
-						<Icon icon="print" className={style.printButton} />
+					<div className={style.pictureAndLinks}>
+						<img
+							src="https://lh3.googleusercontent.com/a/ACg8ocLpqXqbHUIx0fLsW1Qr_ZZTj_SoIzmRx3lvA2bmlAFZBw82=s288-c-no"
+							alt={MyInfo.name}
+						/>
+						<div className={style.logos}>
+							<a href={MyInfo.linkedin} target="_blank" rel="noreferrer">
+								<LinkedInLogo />
+							</a>
+							<a href={MyInfo.instagram} target="_blank" rel="noreferrer">
+								<InstagramLogo />
+							</a>
+							<a href={MyInfo.facebook} target="_blank" rel="noreferrer">
+								<FacebookLogo />
+							</a>
+							<a href={MyInfo.github} target="_blank" rel="noreferrer">
+								<GithubLogo />
+							</a>
+						</div>
 					</div>
 					<div className={style.userInfo}>
 						<h2>{MyInfo.name}</h2>
@@ -44,7 +43,11 @@ const App = () => {
 						<p>
 							<Icon icon="translate" /> {MyInfo.languages}
 						</p>
-						<h4>Biografia</h4>
+					</div>
+				</div>
+				<div className={style.content}>
+					<div className={style.companies}>
+						<h1>Biografia</h1>
 						{MyInfo.biography.description.map((x, index) => {
 							return (
 								<p key={index}>
@@ -54,14 +57,10 @@ const App = () => {
 								</p>
 							)
 						})}
-						<h4>Objetivos</h4>
+						<h1>Objetivos</h1>
 						{MyInfo.biography.objectives.map((x, index) => {
 							return <p key={index}>{x}</p>
 						})}
-					</div>
-				</div>
-				<div className={style.content}>
-					<div className={style.companies}>
 						<h1>Empresas</h1>
 						{MyInfo.companies
 							.filter((x) => !x.hide)
@@ -69,10 +68,10 @@ const App = () => {
 								let xDate = DateUtils.stringToDate('01/' + x.yearRange.start)
 								let yDate = DateUtils.stringToDate('01/' + y.yearRange.start)
 								if (xDate.getTime() > yDate.getTime()) {
-									return -1
+									return 1
 								}
 								if (xDate.getTime() < yDate.getTime()) {
-									return 1
+									return -1
 								}
 								return 0
 							})
@@ -84,7 +83,6 @@ const App = () => {
 								let years = 0
 								while (startDate.getTime() < endDate.getTime()) {
 									months++
-									console.log(months)
 									if (months === 12) {
 										months = 0
 										years++
@@ -122,7 +120,9 @@ const App = () => {
 									<section key={index} className={c.current ? style.current : ''}>
 										<div className={style.companyInfo}>
 											<h3>{c.company}</h3>
-											<span>{`${c.yearRange.start} - ${c.yearRange.end} (${finalRange})`}</span>
+											<span>{`${c.yearRange.start} - ${
+												c.current ? 'HOJE' : c.yearRange.end
+											} (${finalRange})`}</span>
 											<small>{c.location}</small>
 										</div>
 										<b>{c.job}</b>

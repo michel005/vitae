@@ -1,6 +1,5 @@
 const MyInfo = {
 	name: 'Michel Douglas Grigoli',
-	nameReduced: 'Michel D. Grigoli',
 	email: 'mdgrigoli@hotmail.com.br',
 	birthday: '19/12/1991',
 	phone: '(44) 99129-9291',
@@ -20,7 +19,6 @@ const MyInfo = {
 		],
 		objectives: [
 			'Quero crescer profissionalmente, adiquirir sempre mais conhecimento, atuar com as áreas do meu interesse. Hoje gosto muito da área de UX, e eu mesmo já pesquisei e implementei muitas coisas por conta própria mas nunca trabalhei profissionalmente com isso.',
-			'Pretendo sempre aperfeissoar meus conhecimentos com PL/SQL de alta performance, estudar sobre desenvolvimento mobile (que atualmente é o meu ponto fraco), e desenvolver projetos com foco em alta escalabilidade.',
 		],
 	},
 	school: [
@@ -39,7 +37,6 @@ const MyInfo = {
 	],
 	companies: [
 		{
-			hide: false,
 			company: 'Atual Consultoria',
 			location: 'Maringá, Paraná, Brasil',
 			yearRange: {
@@ -48,12 +45,17 @@ const MyInfo = {
 			},
 			job: 'Programador',
 			description: [
-				'Desenvolvimento de sistemas de PDV para frente de caixa na linguagem JAVA e sistema de controle de produção e linhas de montagem. Aprendizado em JavaFX, banco de dados MS Server e algumas bibliotecas como Hibernate e Spring.',
+				<>
+					<p>
+						Desenvolvimento de sistemas de PDV para frente de caixa na linguagem JAVA e sistema de
+						controle de produção e linhas de montagem. Aprendizado em JavaFX, banco de dados MS
+						Server e algumas bibliotecas como Hibernate e Spring.
+					</p>
+				</>,
 			],
 			hashtag: '#java #javaFX #sqlServer #hibernate #spring',
 		},
 		{
-			hide: false,
 			company: 'BENNER',
 			location: 'Maringá, Paraná, Brasil',
 			yearRange: {
@@ -67,7 +69,6 @@ const MyInfo = {
 			hashtag: '#cSharp #delphi #visualBasic #sqlServer #oracle',
 		},
 		{
-			hide: false,
 			company: 'MATERA Systems',
 			location: 'Maringá, Paraná, Brasil',
 			yearRange: {
@@ -76,8 +77,96 @@ const MyInfo = {
 			},
 			job: 'Analista de Sistemas Sênior',
 			description: [
-				'Desenvolvimento e suporte de funcionalidades na solução MATERA Banco, voltada a instituições financeiras. Desenvolvia funcionalidades para uma aplicação WAR java 8 (que futuramente foi migrada para java 11). Auditoria de código e atuação com vários tipos de fluxo de desenvolvimento como scrum e kanban, sempre auxiliando no controle de entrada e saída de chamados, controle de qualidade, testes automáticos. Atuei também com o atendimento ao cliente e plantões para acompanhamento de atualizações de versão.',
-				'Fui muito influente na solução de vários problemas de performance envolvendo o banco de dados Oracle, mudando rotinas em PL/SQL, alterando a estrutura de tabelas e índices, incentivando os clientes a realizar frequentemente processos que otimizam a performance',
+				<>
+					<p>
+						Trabalhei no ramo de sistemas para instituições financeiras no setor de regulatórios,
+						onde me tornei referencia não só pelo conhecimento técnico mas também pelo conhecimento
+						vasto na regra de negócio. Realizava a manutenção do sistema onde o backend utilizava
+						banco de dados PL/SQL ou SQL server, aplicação Java com a suite spring, utilizando os
+						módulos a seguir.
+					</p>
+					<ul>
+						<li>
+							<u>Spring Security</u>: Para autenticação e controle de acesso dos usuários. Tive que
+							realizar manutenções para trocar a forma de autenticação para o{' '}
+							<a href="https://www.keycloak.org/" target="_blank">
+								Keycloak
+							</a>
+							, adaptando a troca de tokens e permissões de acesso.
+						</li>
+						<li>
+							<u>Spring JPA</u>: Mapeamento e persistencia de tabelas. Parte mais importante no qual
+							tive que realizar várias manutenções de performance e em alguns casos inclusive
+							modificar totalmente a query gerada pelo JPA, por uma que usa-se um plano de execução
+							especifico.
+						</li>
+						<li>
+							<u>Spring Batch</u>: Criação de rotinas de alta performance para importação de dados
+							em multi thread. Fui pioneiro na utilização desta tecnologia no time que atuei e fiz a
+							otimização de vários processos single thread que demoravam horas para execultar, onde
+							em alguns casos o multi thread ocazionou uma melhora de até 80%.
+						</li>
+						<li>
+							<u>Spring Config</u>: Manutenção de configurações da aplicação, permitindo colocar
+							estar configurações em um repositório como SVN ou GIT, mantendo tudo centralizado.
+						</li>
+					</ul>
+					<p>
+						Antes da utiliação de alguns modulos, passamos por uma série de treinamentos sobre como
+						a suite spring funciona e os principais conceitos envolvidos.
+					</p>
+					<p>
+						Nesta empresa também iniciei minha atuação com o React, iniciando o processo de migração
+						de telas desenvolvidas em Java AWT + Web Start para frontend React, utilizando Redux,
+						axiose styled components.
+					</p>
+					<p>
+						Durante meu ultimo ano na MATERA, eu trabalhei no planejamento arquitetural desta
+						migração, criando diagramas e prototipos funcionais para que fosse possível modularizar
+						o produto em pequenas MFEs, onde cada MFE poderia ser adiquirida de forma individual
+						pelo cliente, e não de forma unica (como já acontecia atualmente na empresa).
+					</p>
+					<p>
+						Minha maior experiência foi com certeza aprender como o banco de dados Oracle opera por
+						baixo dos panos e como realizar boas melhorias de performance com algumas das
+						tecnologias a seguir:
+					</p>
+					<ul>
+						<li>
+							<u>Planos de execução</u>: Utilizando ferramentas como Profile, TKPROF, Explain Plan,
+							era possível analizar a performance de tudo que era executado no banco de dados do
+							cliente e saber qual era o comando que causavao o problema.
+						</li>
+						<li>
+							<u>Estrutura de dados</u>: Aprendi quais comandos afetam mais a performance do banco
+							de dados e quais estratégias posso seguir quase algum problema ocorre. Dentre dela a
+							mais utilizada era o particionamento de tabelas, subistituição de id sequencial por
+							UUID, ou as vezes a utilização de cache para gerar IDs sequenciais.
+						</li>
+						<li>
+							<u>Hists e indices</u>: Utilização de hints para otimizar, forçar a utilização de
+							indices e mudar a estratégia de execução da query.
+						</li>
+						<li>
+							<u>Mission Control</u>: Utilização do mission controll para debugar e investigar erros
+							relacionados a aplicação Java.
+						</li>
+					</ul>
+					<p>Outras qualidades importantes que adiquiri nesta empresa:</p>
+					<ul>
+						<li>Interesse em disseminar o conhecimento entre pessoas da empresa</li>
+						<li>Participação no processo seletivo para contratação de novos desenvolvedores</li>
+						<li>
+							Implementação de documentações diversas para APIs rest, e trexos de cõdigo que eram
+							compartilhados com demais times
+						</li>
+						<li>
+							Utilização de boas praticas de programação e discução destas boas praticas com os
+							integrantes do time
+						</li>
+						<li>Criação e manutenção de testes unitários e E2E.</li>
+					</ul>
+				</>,
 			],
 			hashtag:
 				'#java #java8 #java11 #oracle #aws #scrum #kanban #plSQL #performance #tkprof #indices #react #springBoot',
@@ -94,273 +183,59 @@ const MyInfo = {
 			},
 			job: 'Analista de Sistemas Sênior',
 			description: [
-				'Atuo em um projeto com a HP no desenvolvimento de novas funcionalidades e correção de bugs em MFE’s desenvolvidas em React. Pesquisa e implementações de novas ferramentas para controle de logs, controle de conteúdo (imagens, traduções e arquivos adicionais de projeto) como contentstack. Fluxo de desenvolvimento scrum onde atuo no desenvolvimento, auditoria de código (code review) e auxílio na geração da build com a publicação final.',
+				<>
+					<p>
+						Atuo em um projeto com um cliente multinacional, utiliando React com Context API, axios,
+						webpack, typescript, styled components entre outras demais bibliotecas.
+					</p>
+					<p>
+						Neste projeto, lido com um time de desenvolvimento, testes (QA), design, PO e TPM, onde
+						desenvolvimento e testes são constituídos de pessoas mundo a fora (EUA, China, India,
+						...). Por se tratar de uma empresa de grande porte, todas as decisões devem ser
+						meticulozamente estruturadas e validadas, antes de serem desenvolvidas. Isso envolve uma
+						série de planejamentos, conversas com o time de design, e planejamentos de
+						implementação, antes que algo seja de fato desenvolvido.
+					</p>
+					<p>
+						A aplicação React utiliza o conceito de layout, onde existe uma MFE maior que encapsula
+						MFEs menores dentro da pagina, como sidebars, header, footer e conteudo, alem de dar
+						manutenção em eventos de analytics, e gestão de conteúdo (tradução, imagens e vídeos).
+					</p>
+					<p>
+						O produto que desenvolvo hoje é traduzido para mais de 50 linguas e tem alto nível de
+						compatibilidade emntre devices distintos (IOS, MAC OS, WINDOWS, CHROMEBOOK, LINUX,
+						ANDROID), e opções de acessibilidade como compatibilidade com screen readers e
+						orientações de leitura (RTL ou LTR).
+					</p>
+					<p>
+						Quando eu entrei no Instituto Eldorado, o projeto estava iniciando, então ajudei muito
+						na tomada de várias decisões de quais tecnologias usar, como implementar gestores de
+						conteudo (Content Stack) e bibliotecas de tradução (i18).
+					</p>
+					<p>
+						Indo mais a fundo no cõdigo, utilizo diariamente varios tipos de hook (useState,
+						useContext, useMemo, ...) em conjunto com ContextAPI, que foi a forma que optamos por
+						utilizar para compartilhar estado entre os componentes.
+					</p>
+					<p>
+						Atualmente meus maior desafio é o suporte entre diferentes navegadores e sistemas
+						operacionais, algo que esta sendo meu principal objeto de estudo, apesar de já saber me
+						utilizar de algumas estratégias.
+					</p>
+					<p>
+						Além de todas as minhas atuações com este projeto especifico, o Eldorado em si também
+						promove alguns grupos de estudo no qual eu faço parte, como o grupo de Multi Cloud, onde
+						estudamos anualmente varios conceitos de multicloud. Seguindo nessa linha, já fiz
+						apresentações sobre:
+					</p>
+					<ul>
+						<li>Utilização de multicloud para tradução com IA</li>
+						<li>Multicloud + MongoDB</li>
+						<li>Bibliotecas multicloud (teraform, pulumi)</li>
+					</ul>
+				</>,
 			],
 			hashtag: '#react #contentStack #npm #yarn #aws #figma #scrum',
-		},
-	],
-	courses: [
-		{
-			title: 'AWS Lightsail',
-			progress: 1,
-		},
-		{
-			title: 'AWS Cloud watch',
-			progress: 0.8,
-		},
-		{
-			title: 'AWS S3',
-			progress: 1,
-		},
-		{
-			title: 'React com Typescript',
-			progress: 1,
-		},
-		{
-			title: 'Introdução ao FIGMA',
-			progress: 1,
-		},
-	],
-	experiences: [
-		{
-			name: 'AWS S3',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'AWS EC2',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'AWS Maintance',
-			version: '',
-			level: 3,
-		},
-		{
-			name: 'AWS Cloudfront',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'AWS Certificate Manager',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'AWS Route 53',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'AWS Load Balancer',
-			version: '',
-			level: 3,
-		},
-		{
-			name: 'AWS RDS',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Java',
-			version: '6',
-			level: 3,
-		},
-		{
-			name: 'Java',
-			version: '7',
-			level: 4,
-		},
-		{
-			name: 'Java',
-			version: '8',
-			level: 5,
-		},
-		{
-			name: 'Java',
-			version: '11',
-			level: 5,
-		},
-		{
-			name: 'React',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'React Test Suite',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'Spring Boot',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Spring Security',
-			version: '',
-			level: 3,
-		},
-		{
-			name: 'Spring JPA',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'Spring Mongo DB',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'Spring Thymeleaf',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Spring Batch',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Java FX',
-			version: 'Java 8 ou Superior',
-			level: 5,
-		},
-		{
-			name: 'Figma',
-			version: '',
-			level: 3,
-		},
-		{
-			name: 'Framer',
-			version: '',
-			level: 3,
-		},
-		{
-			name: 'Jira',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Git',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Maven',
-			version: '2, 3',
-			level: 5,
-		},
-		{
-			name: 'Yarn',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'NPM',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Mongo DB',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'MySQL',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Oracle DB',
-			version: '10, 11g, 12c, 18',
-			level: 5,
-		},
-		{
-			name: 'Oracle TKPROF, Profile',
-			version: '10, 11g, 12c, 18',
-			level: 5,
-		},
-		{
-			name: 'PL/SQL',
-			version: '10, 11g, 12c, 18',
-			level: 5,
-		},
-		{
-			name: 'Delphi',
-			version: 'XE3',
-			level: 2,
-		},
-		{
-			name: 'C#',
-			version: '2018',
-			level: 3,
-		},
-		{
-			name: 'Scrum',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Kanban',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Jenkins',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'Teamcity',
-			version: '',
-			level: 3,
-		},
-		{
-			name: 'Nexus',
-			version: '',
-			level: 3,
-		},
-		{
-			name: 'Docker',
-			version: '',
-			level: 4,
-		},
-		{
-			name: 'Kubernets',
-			version: '',
-			level: 2,
-		},
-		{
-			name: 'Content Stack',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Tomcat',
-			version: '7, 8, 9',
-			level: 5,
-		},
-		{
-			name: 'JBoss',
-			version: '5',
-			level: 4,
-		},
-		{
-			name: 'TestNG',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Junit',
-			version: '',
-			level: 5,
-		},
-		{
-			name: 'Padrão de projeto',
-			version: 'Strategy, Builder, Factory, Singleton',
-			level: 5,
 		},
 	],
 }
